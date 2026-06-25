@@ -11,6 +11,12 @@ sites:
     url: https://phyituqxevqqycikqguj.supabase.co/functions/v1/trust-center-data?slug=novapay
   - name: Auth (GoTrue)
     url: https://phyituqxevqqycikqguj.supabase.co/auth/v1/health
+    # The Supabase API gateway returns 401 for /auth/v1/health without an
+    # `apikey` header, but a response from GoTrue still proves the auth layer
+    # is reachable and responding. Treat 401 as "up" so the monitor is stable.
+    expectedStatusCodes:
+      - 200
+      - 401
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
