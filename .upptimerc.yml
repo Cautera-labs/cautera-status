@@ -24,14 +24,17 @@ status-website:
   cname: status.cautera.com
   # baseUrl: /your-repo-name
   name: Cautera Status
-  introTitle: "**Cautera Status** is the open-source uptime monitor and status page for Cautera, powered entirely by GitHub."
-  introMessage: This is the live status page for Cautera, using **real-time** data from our [GitHub repository](https://github.com/Cautera-labs/cautera-status). No server required — just GitHub Actions, Issues, and Pages.
+  introTitle: "**Cautera Status**"
+  introMessage: "Live availability and response times for the Cautera platform. This page updates automatically — check here for the current status of our services and any active incidents."
   theme: light
+  # Hide the default Upptime footer attribution. Upptime is MIT-licensed, so
+  # attribution is required only in source — not on the rendered page.
+  css: "footer { display: none !important; }"
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: Cautera
+      href: https://www.cautera.com
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
