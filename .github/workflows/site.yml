@@ -46,6 +46,9 @@ jobs:
         with:
           client-id: ${{ vars.GH_APP_ID }}
           private-key: ${{ env.GH_APP_PRIVATE_KEY }}
+          # Scoped token: no workflows or actions permission, so code in this job cannot edit workflows.
+          permission-contents: write
+          permission-issues: write
       - name: Clear GitHub App private key
         if: ${{ always() }}
         shell: bash

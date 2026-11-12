@@ -41,6 +41,8 @@ jobs:
         with:
           client-id: ${{ vars.GH_APP_ID }}
           private-key: ${{ env.GH_APP_PRIVATE_KEY }}
+          # Scoped token: upptime/updates only checks that a token exists.
+          permission-contents: read
       - name: Clear GitHub App private key
         if: ${{ always() }}
         shell: bash
